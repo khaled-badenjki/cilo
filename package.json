@@ -8,7 +8,8 @@
   "scripts": {
     "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release",
+    "lint": "eslint . --ext .js"
   },
   "dependencies": {
     "mocha": "^10.2.0",
@@ -20,6 +21,7 @@
   "devDependencies": {
     "@semantic-release/git": "^10.0.1",
     "@semantic-release/npm": "^10.0.4",
+    "eslint": "^8.42.0",
     "nodemon": "^2.0.22",
     "semantic-release": "^21.0.5"
   },
