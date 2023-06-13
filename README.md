@@ -1,10 +1,3 @@
-# cilo
-A wrapper around sequelize to build multi-tenant applications
-
-![build](https://github.com/khaled-badenjki/cilo/actions/workflows/github-actions.yml/badge.svg)
-
-
-
 <h1 align="center" style="border-bottom: none;">📦🚀 Cilo</h1>
 <h3 align="center">Build multi-tenant apps without thinking about it</h3>
 <p align="center">
