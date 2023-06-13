@@ -1,13 +1,14 @@
 {
   "name": "cilo",
-  "version": "1.0.1",
+  "version": "0.0.0-development",
   "description": "A wrapper around sequelize to build multi-tenant applications",
   "main": "index.js",
   "author": "M. Khaled Badenjki",
   "license": "MIT",
   "scripts": {
     "dev": "nodemon index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "semantic-release": "semantic-release"
   },
   "dependencies": {
     "mocha": "^10.2.0",
@@ -17,9 +18,14 @@
     "yargs": "^17.7.2"
   },
   "devDependencies": {
-    "nodemon": "^2.0.22"
+    "nodemon": "^2.0.22",
+    "semantic-release": "^21.0.5"
   },
   "bin": {
     "cilo": "./cli/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/khaled-badenjki/cilo.git"
   }
 }

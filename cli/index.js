@@ -3,13 +3,13 @@ const yargs = require('yargs');
 const Sequelize = require('sequelize');
 const env = process.env.NODE_ENV || 'development';
 const config = require(__dirname + '/../config/config.json')[env];
-const Tenant = require('../lib/tenant');
+const Cilo = require('../lib/cilo');
 
-const tenant = new Tenant(Sequelize, config.database, config.username, config.password, config);
+const cilo = new Cilo(Sequelize, config.database, config.username, config.password, config);
 
 // command db:migrate to run migrations for all tenants
 yargs.command('db:migrate', 'Run migrations for all tenants', {}, () => {
-  tenant
+  cilo
     .migrate()
     .then(() => {
       console.log('Migrations complete');
@@ -35,7 +35,7 @@ yargs.command('db:seed', 'Run seeders for a specific tenant', {
     type: 'string'
   }
 }, (argv) => {
-  tenant
+  cilo
     .seed(argv.seed, argv.tenant)
     .then(() => {
       console.log('Seeders complete');
