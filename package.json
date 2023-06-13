@@ -18,6 +18,8 @@
     "yargs": "^17.7.2"
   },
   "devDependencies": {
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/npm": "^10.0.4",
     "nodemon": "^2.0.22",
     "semantic-release": "^21.0.5"
   },
