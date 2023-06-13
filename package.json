@@ -1,6 +1,6 @@
 {
   "name": "cilo",
-  "version": "0.0.0-development",
+  "version": "1.0.0",
   "description": "A wrapper around sequelize to build multi-tenant applications",
   "main": "index.js",
   "author": "M. Khaled Badenjki",
