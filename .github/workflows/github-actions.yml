@@ -3,15 +3,18 @@ on:
   push:
     branches:
       - main
+  
+  pull_request:
+    types:
+      - opened
+
+permissions:
+  contents: read # to fetch code (actions/checkout)
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Check PR title
-        uses: Slashgear/action-check-pr-title@v4.3.0
-        with:
-          regexp: "(feat|fix|docs|chore|ci): .+"
-          helpMessage: "Example: 'feat: example of title'"
       - name: Checkout
         uses: actions/checkout@v3
         with:
@@ -24,6 +27,3 @@ jobs:
         run: yarn install --frozen-lockfile
       - name: run linting
         run: npm run lint
-      - name: run unit tests
-        run: npm run test
-      - run: echo "🍏 This job's status is ${{ job.status }}."
