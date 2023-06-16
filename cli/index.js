@@ -1,11 +1,16 @@
 #!/usr/bin/env node
 const yargs = require('yargs');
+const process = require('process');
+const path = require('path');
 const Sequelize = require('sequelize');
 const env = process.env.NODE_ENV || 'development';
-const config = require(__dirname + '/../config/config.json')[env];
+const configtPath = path.resolve(process.cwd(), 'dal', 'config.js');
+const config = require(configtPath)[env];
+const modelsPath = path.resolve(process.cwd(), 'dal', 'models');
 const Cilo = require('../lib/cilo');
+// console.log('config', config);
 
-const cilo = new Cilo(Sequelize, config.database, config.username, config.password, config);
+const cilo = new Cilo(Sequelize, config.database, config.username, config.password, modelsPath, config);
 
 // command db:migrate to run migrations for all tenants
 yargs.command('db:migrate', 'Run migrations for all tenants', {}, () => {
