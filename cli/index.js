@@ -52,5 +52,24 @@ yargs.command('db:seed', 'Run seeders for a specific tenant', {
     });
 });
 
+yargs.command('db:seed:all', 'Run all seeders, either for all tenants or for a specific tenant', {
+  tenant: {
+    describe: 'Tenant name, if not provided, seeders will be run for all tenants',
+    demandOption: false,
+    type: 'string'
+  }
+}, (argv) => {
+  cilo
+    .seedAll(argv.tenant)
+    .then(() => {
+      console.log('Seeders complete');
+      process.exit(0);
+    })
+    .catch((error) => {
+      console.log("Error running seeders", error);
+      process.exit(1);
+    });
+});
+
 
 yargs.parse();
