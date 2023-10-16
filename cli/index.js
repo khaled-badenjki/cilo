@@ -4,9 +4,9 @@ const process = require('process');
 const path = require('path');
 const Sequelize = require('sequelize');
 const env = process.env.NODE_ENV || 'development';
-const configtPath = path.resolve(process.cwd(), 'dal', 'config.js');
+const configtPath = path.resolve(process.cwd(), 'src/dal', 'config.js');
 const config = require(configtPath)[env];
-const modelsPath = path.resolve(process.cwd(), 'dal', 'models');
+const modelsPath = path.resolve(process.cwd(), 'src/dal', 'models');
 const Cilo = require('../lib/cilo');
 // console.log('config', config);
 
